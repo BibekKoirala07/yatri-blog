@@ -11,7 +11,7 @@ const HomeSearch = ({
     <div className="relative max-w-xl mx-auto mb-12">
       <input
         type="text"
-        placeholder="Search articles..."
+        placeholder="Search blogs..."
         className="w-full px-6 py-4 text-lg rounded-full border border-gray-200 
              shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 
              focus:border-transparent transition-all duration-200"

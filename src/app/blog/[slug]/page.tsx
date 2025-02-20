@@ -1,4 +1,4 @@
-import EachBlogDisplay from "@/components/blogs/EachBlogDisplay";
+import EachBlogDisplay from "@/components/blog/EachBlogDisplay";
 import EachBlogSkeleton from "@/components/loading/EachBlogSkeleton";
 import Link from "next/link";
 import { Suspense } from "react";
