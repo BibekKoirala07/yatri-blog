@@ -21,8 +21,11 @@ The application has two main routes:
 Implementation Details
 
 **Skeleton Implementation**: A loading state is displayed while fetching blog posts.
+
 **Error Handling**: If an error occurs while fetching posts, a message is shown to the user.
+
 **Mock Data**: Blog posts are stored in mock data with a delay to simulate API calls with delays.
+
 **Dynamic Search**: Filters blog posts dynamically based on the search term.
 
 ## Tech Stack
