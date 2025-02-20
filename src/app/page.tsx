@@ -9,7 +9,23 @@ import { blogPosts } from "@/data/mock";
 import { typePost } from "@/types/types";
 import { useEffect, useState } from "react";
 
-function getBlogs(filteredPosts: typePost[], currentPage = 1, perPage = 5) {
+const PER_PAGE = 5;
+
+const filterPosts = (query: string): typePost[] => {
+  if (!query) return blogPosts;
+  const lowerQuery = query.toLowerCase();
+  return blogPosts.filter(
+    (post) =>
+      post.title.toLowerCase().includes(lowerQuery) ||
+      post.summary.toLowerCase().includes(lowerQuery)
+  );
+};
+
+function getBlogs(
+  filteredPosts: typePost[],
+  currentPage = 1,
+  perPage = PER_PAGE
+) {
   return new Promise<{
     hasMorePosts: boolean;
     error: string;
@@ -44,48 +60,49 @@ export default function Home() {
   useEffect(() => {
     setLoading(true);
 
-    (async () => {
-      const filteredPosts = search
-        ? blogPosts.filter(
-            (post) =>
-              post.title.toLowerCase().includes(search.toLowerCase()) ||
-              post.summary.toLowerCase().includes(search.toLowerCase())
-          )
-        : blogPosts;
+    const fetchPosts = async () => {
+      setLoading(true);
+      const filteredPosts = filterPosts(search);
       const { error, posts, hasMorePosts } = await getBlogs(
         filteredPosts,
         currentPage
       );
       setDisplayedPosts({ error, posts, hasMorePosts });
       setLoading(false);
-    })();
+    };
+    fetchPosts();
   }, [search, currentPage]);
+
+  const renderContent = () => {
+    if (loading) return <HomeBlogsSkeleton />;
+    if (displayedPosts.error)
+      return (
+        <div className="text-red-500 text-xl text-center bg-white rounded-2xl p-6 shadow-md">
+          Something went wrong.
+        </div>
+      );
+    if (displayedPosts.posts.length > 0)
+      return <HomeBlogsDisplay filteredPosts={displayedPosts.posts} />;
+    return (
+      <div className="text-center text-gray-500">
+        {search ? `No results found for "${search}"` : "No posts available"}
+      </div>
+    );
+  };
 
   const onPageChange = (newPage: number) => {
     setCurrentPage(newPage);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 px-4 py-12">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gray-50 rounded-xl px-4 sm:px-10 py-12">
+      <div className=" mx-auto">
         <div className="text-center mb-12">
           <HomeHeader />
           <HomeSearch search={search} setSearch={setSearch} />
         </div>
 
-        {loading ? (
-          <HomeBlogsSkeleton />
-        ) : displayedPosts?.error ? (
-          <div className="text-red-500 text-xl text-center bg-white rounded-2xl p-6 shadow-md">
-            Something went wrong.
-          </div>
-        ) : displayedPosts?.posts.length > 0 ? (
-          <HomeBlogsDisplay filteredPosts={displayedPosts.posts} />
-        ) : (
-          <div className="text-center text-gray-500">
-            {search ? `No results found for "${search}"` : "No posts available"}
-          </div>
-        )}
+        {renderContent()}
 
         <HomePagination
           currentPage={currentPage}

@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 export default async function BlogPost({ params }: { params: any }) {
   return (
-    <div className="min-h-screen bg-gray-50 px-4 py-12">
+    <div className="min-h-screen bg-gray-50 rounded-xl px-4 py-12">
       <div className="max-w-3xl mx-auto">
         <Link
           href="/"
