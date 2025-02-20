@@ -13,9 +13,8 @@ const HomePagination: React.FC<HomePaginationProps> = ({
   loading,
   onPageChange,
 }) => {
-  console.log("loading", loading);
   return (
-    <div className="flex justify-center items-center gap-4 mt-6 bg-white shadow-md p-4 rounded-lg">
+    <div className="flex justify-center items-center gap-4 mt-12 bg-white shadow-md p-4 rounded-lg">
       <button
         className={`rounded-lg px-4 py-2 font-medium transition-all border 
             disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:border-gray-300 disabled:text-gray-500
