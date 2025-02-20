@@ -6,11 +6,8 @@ import React from "react";
 const EachBlogDisplay = async ({ params }: { params: any }) => {
   await new Promise((resolve) => setTimeout(resolve, 2000));
   const { slug } = await params;
-  console.log("params", params);
 
   const post = blogPosts.filter((each) => each.id == slug);
-
-  console.log("post", post);
 
   if (post.length == 0) {
     return (

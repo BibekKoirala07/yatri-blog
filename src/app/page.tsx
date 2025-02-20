@@ -5,11 +5,10 @@ import HomeHeader from "@/components/home/HomeHeader";
 import HomePagination from "@/components/home/HomePagination";
 import HomeSearch from "@/components/home/HomeSearch";
 import HomeBlogsSkeleton from "@/components/loading/HomeBlogsSkeleton";
+import { PAGE_SIZE } from "@/data/constants";
 import { blogPosts } from "@/data/mock";
 import { typePost } from "@/types/types";
 import { useEffect, useState } from "react";
-
-const PER_PAGE = 5;
 
 const filterPosts = (query: string): typePost[] => {
   if (!query) return blogPosts;
@@ -24,7 +23,7 @@ const filterPosts = (query: string): typePost[] => {
 function getBlogs(
   filteredPosts: typePost[],
   currentPage = 1,
-  perPage = PER_PAGE
+  perPage = PAGE_SIZE
 ) {
   return new Promise<{
     hasMorePosts: boolean;
