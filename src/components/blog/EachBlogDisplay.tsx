@@ -2,7 +2,7 @@ import { blogPosts } from "@/data/mock";
 import React from "react";
 import BlogAddToFavouriteButton from "./BlogAddToFavouriteButton";
 
-const EachBlogDisplay = async ({ params }: { params: Promise<any> }) => {
+const EachBlogDisplay = async ({ params }: { params: { slug: string } }) => {
   await new Promise((resolve) => setTimeout(resolve, 500));
   const { slug } = await params;
 
