@@ -35,9 +35,13 @@ const FavouritesPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 px-4 sm:px-10 py-12">
-      <div className="mx-auto max-w-4xl">
+      <div className="flex justify-between items-center align-middle  ">
+        <Link href={"/"} className="text-blue-500  flex items-center">
+          {"<-- Home Page"}
+        </Link>
         <h1 className="text-3xl font-bold mb-6">Your Favourites</h1>
-
+      </div>
+      <div className="mx-auto max-w-4xl">
         {displayedPosts.length === 0 ? (
           <p className="text-gray-500">
             No favourites yet. Go to the{" "}

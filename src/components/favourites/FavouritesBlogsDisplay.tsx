@@ -10,21 +10,22 @@ const FavouritesBlogsDisplay = ({
   filteredPosts: typePost[];
 }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {filteredPosts.map((post: typePost) => (
-        <div key={post.id} className="">
-          <Link href={`/blog/${post.id}`} className="group h-full block">
-            <article
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl
+    <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {filteredPosts.map((post: typePost) => (
+          <div key={post.id} className="">
+            <Link href={`/blog/${post.id}`} className="group h-full block">
+              <article
+                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl
                         transition-all duration-300 h-full border border-gray-100
                         hover:-translate-y-1"
-            >
-              <div className="flex flex-col h-full">
-                <div className="my-4 flex justify-between mr-6 items-center">
-                  <span className="text-sm text-blue-600 font-medium">
-                    Article {post.id}
-                  </span>
-                  {/* <button
+              >
+                <div className="flex flex-col h-full">
+                  <div className="my-4 flex justify-between mr-6 items-center">
+                    <span className="text-sm text-blue-600 font-medium">
+                      Article {post.id}
+                    </span>
+                    {/* <button
                     className="group-hover:scale-110 transition-transform duration-200"
                     onClick={(e) => {
                       e.preventDefault();
@@ -46,44 +47,45 @@ const FavouritesBlogsDisplay = ({
                       />
                     </svg>
                   </button> */}
-                </div>
-                <h2
-                  className="text-2xl font-bold text-gray-900 mb-3
+                  </div>
+                  <h2
+                    className="text-2xl font-bold text-gray-900 mb-3
                        group-hover:text-blue-600 transition-colors duration-200"
-                >
-                  {post.title}
-                </h2>
-                <p className="text-gray-600 line-clamp-2 mb-4 flex-grow">
-                  {post.summary}
-                </p>
-                <div className="text-sm text-gray-500 mb-4">
-                  <span>
-                    Published on {new Date(post.date).toLocaleDateString()}
-                  </span>
+                  >
+                    {post.title}
+                  </h2>
+                  <p className="text-gray-600 line-clamp-2 mb-4 flex-grow">
+                    {post.summary}
+                  </p>
+                  <div className="text-sm text-gray-500 mb-4">
+                    <span>
+                      Published on {new Date(post.date).toLocaleDateString()}
+                    </span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="flex items-center">
+                      Read more
+                      <svg
+                        className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-200"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center text-sm text-gray-500">
-                  <span className="flex items-center">
-                    Read more
-                    <svg
-                      className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-200"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-            </article>
-          </Link>
-        </div>
-      ))}
+              </article>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

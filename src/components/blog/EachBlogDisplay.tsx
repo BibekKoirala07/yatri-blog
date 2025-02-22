@@ -5,16 +5,17 @@ import React from "react";
 import BlogAddToFavouriteButton from "./BlogAddToFavouriteButton";
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-const EachBlogDisplay = async ({ params }: PageProps) => {
-  await new Promise((resolve) => setTimeout(resolve, 500));
-  const { slug } = await params;
+const EachBlogDisplay = ({ params }: PageProps) => {
+  new Promise((resolve) => setTimeout(resolve, 500));
+  const unwrappedParams = React.use(params);
+  const { slug } = unwrappedParams;
 
   const newSlug = parseInt(slug);
 
-  console.log("params", params);
+  // console.log("params", params);
 
   const post = blogPosts.filter((each) => each.id == newSlug);
 
