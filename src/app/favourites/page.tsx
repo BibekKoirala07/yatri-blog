@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 
 import { blogPosts } from "@/data/mock";
-import HomePagination from "@/components/home/HomePagination";
 import { PAGE_SIZE } from "@/data/constants";
 import FavouritesBlogsDisplay from "@/components/favourites/FavouritesBlogsDisplay";
 import HomeBlogsSkeleton from "@/components/loading/HomeBlogsSkeleton";
