@@ -1,10 +1,9 @@
 import { blogPosts } from "@/data/mock";
-import Link from "next/link";
-import { notFound } from "next/navigation";
 import React from "react";
+import BlogAddToFavouriteButton from "./BlogAddToFavouriteButton";
 
 const EachBlogDisplay = async ({ params }: { params: any }) => {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 500));
   const { slug } = await params;
 
   const post = blogPosts.filter((each) => each.id == slug);
@@ -19,9 +18,12 @@ const EachBlogDisplay = async ({ params }: { params: any }) => {
 
   return (
     <article className="bg-white rounded-2xl shadow-sm p-8">
-      <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-        {post[0].title}
-      </h1>
+      <div className="flex justify-between items-start mb-6">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+          {post[0].title}
+        </h1>
+        <BlogAddToFavouriteButton id={post[0].id} />
+      </div>
 
       <div className="text-sm text-gray-500 mb-4">
         <span>

@@ -36,7 +36,7 @@ function getBlogs(
       const posts = filteredPosts.slice(startIndex, endIndex);
       const hasMorePosts = endIndex < blogPosts.length;
       resolve({ hasMorePosts, posts, error: "" });
-    }, 3000);
+    }, 500);
   });
 }
 
@@ -94,7 +94,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 rounded-xl px-4 sm:px-10 py-12">
+    <div className="min-h-screen bg-gray-50 rounded-xl px-4 sm:px-10 py-2">
       <div className=" mx-auto">
         <div className="text-center mb-12">
           <HomeHeader />
