@@ -3,11 +3,7 @@ import EachBlogSkeleton from "@/components/loading/EachBlogSkeleton";
 import Link from "next/link";
 import { Suspense } from "react";
 
-export default async function BlogPost({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function BlogPost({ params }: { params: Promise<any> }) {
   return (
     <div className="min-h-screen bg-gray-50 rounded-xl px-4 py-12">
       <div className="max-w-3xl mx-auto">
