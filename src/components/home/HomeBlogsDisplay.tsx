@@ -64,7 +64,7 @@ import React from "react";
 const HomeBlogsDisplay = ({ filteredPosts }: { filteredPosts: typePost[] }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {filteredPosts.map((post: any) => (
+      {filteredPosts.map((post: typePost) => (
         <div key={post.id}>
           <Link href={`/blog/${post.id}`} className="group h-full block">
             <article

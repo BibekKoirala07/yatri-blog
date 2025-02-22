@@ -13,6 +13,7 @@ import FavouritesPagination from "@/components/favourites/FavouritesPagination";
 
 const FavouritesPage = () => {
   const [loading, setLoading] = useState(false);
+  console.log("setLoading", setLoading);
   const favouriteIds = useSelector(
     (state: RootState) => state.favourites.favouriteIds
   );

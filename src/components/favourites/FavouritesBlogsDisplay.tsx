@@ -11,7 +11,7 @@ const FavouritesBlogsDisplay = ({
 }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {filteredPosts.map((post: any) => (
+      {filteredPosts.map((post: typePost) => (
         <div key={post.id} className="">
           <Link href={`/blog/${post.id}`} className="group h-full block">
             <article

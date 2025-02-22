@@ -2,11 +2,15 @@ import { blogPosts } from "@/data/mock";
 import React from "react";
 import BlogAddToFavouriteButton from "./BlogAddToFavouriteButton";
 
-const EachBlogDisplay = async ({ params }: { params: any }) => {
+const EachBlogDisplay = async ({ params }: { params: { slug: string } }) => {
   await new Promise((resolve) => setTimeout(resolve, 500));
   const { slug } = await params;
 
-  const post = blogPosts.filter((each) => each.id == slug);
+  const newSlug = parseInt(slug);
+
+  console.log("params", params);
+
+  const post = blogPosts.filter((each) => each.id == newSlug);
 
   if (post.length == 0) {
     return (
