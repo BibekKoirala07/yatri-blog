@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 const BlogAddToFavouriteButton = ({ id }: { id: number }) => {
   const dispatch = useDispatch();
 
-  console.log("id", id);
+  // console.log("id", id);
 
   const favouriteIds = useSelector(
     (state: RootState) => state.favourites.favouriteIds

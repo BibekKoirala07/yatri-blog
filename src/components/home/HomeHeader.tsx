@@ -10,12 +10,15 @@ const HomeHeader = () => {
   const favouriteCount = useSelector(
     (state: RootState) => state.favourites.favouriteIds.length
   );
-  console.log("favouriteCount", favouriteCount);
+  // console.log("favouriteCount", favouriteCount);
   return (
     <div>
       <div className="flex justify-end p-4">
         <Link href="/favourites" className="relative">
-          <FaHeart className="text-gray-600 text-3xl hover:text-red-500 transition" />
+          <FaHeart
+            fill="no"
+            className="text-gray-600 text-3xl hover:text-red-500 transition"
+          />
           {
             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
               {favouriteCount.toString()}

@@ -94,7 +94,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 rounded-xl px-4 sm:px-10 py-2">
+    <div className="min-h-screen bg-gray-50 rounded-xl px-6 sm:px-10 py-6">
       <div className=" mx-auto">
         <div className="text-center mb-12">
           <HomeHeader />
