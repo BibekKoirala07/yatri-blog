@@ -8,6 +8,7 @@ A simple and efficient blog application built using **Next.js** and **TypeScript
 - 🔍 **Search Functionality**: Filter blog posts by title or summary
 - 📄 **Pagination**: Efficiently loads blog posts with pagination
 - 🎨 **Styled with Tailwind CSS**
+- **State management with Redux**
 - 🏗 **Component-Based Architecture**
 
 # Overview
@@ -28,11 +29,14 @@ Implementation Details
 
 **Dynamic Search**: Filters blog posts dynamically based on the search term.
 
+**Favourites Features**: Now You can add the favourites and see them.
+
 ## Tech Stack
 
 - **Next.js** - React Framework
 - **TypeScript** - Type Safety
 - **Tailwind CSS** - Styling
+- **Redux toolkit** - State managements
 - **Mock Data** - Simulated Blog Posts for Development
 
 ## Installation
