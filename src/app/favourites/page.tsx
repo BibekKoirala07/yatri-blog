@@ -34,12 +34,14 @@ const FavouritesPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 px-4 sm:px-10 py-12">
-      <div className="flex justify-between items-center align-middle  ">
-        <Link href={"/"} className="text-blue-500  flex items-center">
+    <div className="min-h-screen max-w-4xl mx-auto bg-gray-50 px-4 sm:px-10 py-12">
+      <div className="flex max-w-4xl p-4 mb-8 justify-between items-center align-middle  ">
+        <Link href={"/"} className="text-blue-500 font-bold  flex items-center">
           {"<-- Home Page"}
         </Link>
-        <h1 className="text-3xl font-bold mb-6">Your Favourites</h1>
+        <h1 className="text-3xl font-bold flex align-middle ">
+          Your Favourites
+        </h1>
       </div>
       <div className="mx-auto max-w-4xl">
         {displayedPosts.length === 0 ? (
