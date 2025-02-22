@@ -1,4 +1,5 @@
 "use client";
+
 import { typePost } from "@/types/types";
 import Link from "next/link";
 import React from "react";
@@ -10,7 +11,7 @@ const FavouritesBlogsDisplay = ({
 }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {filteredPosts.map((post: any, index: number) => (
+      {filteredPosts.map((post: any) => (
         <div key={post.id} className="">
           <Link href={`/blog/${post.id}`} className="group h-full block">
             <article
