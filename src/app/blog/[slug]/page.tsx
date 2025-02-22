@@ -12,7 +12,7 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default function page({ params }: PageProps) {
+export default function BlogPosts({ params }: PageProps) {
   const favouriteCount = useSelector(
     (state: RootState) => state.favourites.favouriteIds.length
   );
