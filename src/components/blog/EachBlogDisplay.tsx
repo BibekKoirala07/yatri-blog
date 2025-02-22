@@ -2,7 +2,11 @@ import { blogPosts } from "@/data/mock";
 import React from "react";
 import BlogAddToFavouriteButton from "./BlogAddToFavouriteButton";
 
-const EachBlogDisplay = async ({ params }: { params: { slug: string } }) => {
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+const EachBlogDisplay = async ({ params }: PageProps) => {
   await new Promise((resolve) => setTimeout(resolve, 500));
   const { slug } = await params;
 
