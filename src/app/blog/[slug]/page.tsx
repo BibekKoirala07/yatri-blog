@@ -1,10 +1,12 @@
+"use client";
+
 import EachBlogDisplay from "@/components/blog/EachBlogDisplay";
 import EachBlogSkeleton from "@/components/loading/EachBlogSkeleton";
 import Link from "next/link";
 import { Suspense } from "react";
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 export default async function BlogPost({ params }: PageProps) {

@@ -1,9 +1,11 @@
+"use client";
+
 import { blogPosts } from "@/data/mock";
 import React from "react";
 import BlogAddToFavouriteButton from "./BlogAddToFavouriteButton";
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 const EachBlogDisplay = async ({ params }: PageProps) => {
